@@ -1,0 +1,45 @@
+{
+  "name": "galicia-surf",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 6969",
+    "build": "tsc && vite build",
+    "lint": "tsc --noEmit && eslint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/*.ts[x]": [
+      "npm run prettier:fix",
+      "npm run lint"
+    ]
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "volta": {
+    "node": "18.15.0",
+    "npm": "9.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.1",
+    "vite-plugin-eslint": "^1.8.1"
+  }
+}
