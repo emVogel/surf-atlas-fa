@@ -1,0 +1,769 @@
+{
+  "data": {
+    "data": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.831864699, 42.389251545]
+          },
+          "properties": {
+            "id": 2,
+            "name": "Canelas",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "mid, high",
+            "bottom": "sand",
+            "direction": "different peaks",
+            "access": "parking",
+            "location": "little town",
+            "description": "left with tubes, different peaks of intermediate quality depending on the sand banks",
+            "crowd": "",
+            "best_season": "autumn, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NW", " NE"],
+            "swell": ["NW", " W", " SW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.825486664, 42.391321611]
+          },
+          "properties": {
+            "id": 3,
+            "name": "Canelinas",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "mid",
+            "bottom": "sand",
+            "direction": "right",
+            "access": "parking",
+            "location": "village",
+            "description": "quality wave, hollow, ridable",
+            "crowd": "",
+            "best_season": "winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NW", " NE"],
+            "swell": ["SW", " W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.874510847, 42.427195094]
+          },
+          "properties": {
+            "id": 5,
+            "name": "Foxos",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "mid, low",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "semi urban",
+            "description": "best with west swells, needs little swell size, well protected from winds,  perfect winds from south, north and northeast, all depending dfrom the sandbanks, ",
+            "crowd": "",
+            "best_season": "autum, spring, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NE", " S", " E"],
+            "swell": ["W", " N", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.84943375, 42.397206185]
+          },
+          "properties": {
+            "id": 6,
+            "name": "Montalvo",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "mid, high",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "semi urban",
+            "description": "needs big swells to work; hollow shore break; powerful; for intermediate and experienced surfers; works best with northeasterlies;  bars,  restaurants and camping close by",
+            "crowd": "",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NE", " E"],
+            "swell": ["NW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.077201354, 42.582687941]
+          },
+          "properties": {
+            "id": 8,
+            "name": "Balieiros",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low",
+            "bottom": "sand, rocks",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "natural",
+            "description": "very exposed beach; a lot of peaks with hollow seccions; winds from south and light winds from east and northeast; holds up until 2m ",
+            "crowd": "little",
+            "best_season": "all year",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SW", " SE"],
+            "swell": ["N", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.030896909, 42.552032808]
+          },
+          "properties": {
+            "id": 9,
+            "name": "O Vilar",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low. mid",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "natural",
+            "description": "needs a bigger swell to work; beach break for every skill level; lots of peaks so it handles a crowded line-up; holds up to 2m",
+            "crowd": "crowded on weekends",
+            "best_season": "spring, autumn",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE", " E"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.866532321, 42.251142631]
+          },
+          "properties": {
+            "id": 10,
+            "name": "Melide",
+            "alternative_name": "Cabo Home",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "low",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "natural",
+            "description": "",
+            "crowd": "empty",
+            "best_season": "autmun, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NE", " E"],
+            "swell": ["SW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.836046108, 42.257319047]
+          },
+          "properties": {
+            "id": 11,
+            "name": "Praia de Nerga",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "low",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "village",
+            "description": "sheltered beach; works best  with northeasterlies and swells from southwest",
+            "crowd": "empty",
+            "best_season": "winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NE"],
+            "swell": ["SW", " W "]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.062151758, 42.602908339]
+          },
+          "properties": {
+            "id": 13,
+            "name": "Serans",
+            "alternative_name": "Espiñeirido",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "natural",
+            "description": "holds up until 2 meters because of its exposed location",
+            "crowd": "",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SW", " SE"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.036866135, 42.648884344]
+          },
+          "properties": {
+            "id": 14,
+            "name": "Rio Seira",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "rural",
+            "description": "starts working with small swell size; powerful and fast waves with tubes",
+            "crowd": "few, weekends: crowded",
+            "best_season": "summer, autumn",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SE", " E"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.039025315, 42.640885928]
+          },
+          "properties": {
+            "id": 15,
+            "name": "AS Furnas",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "rural, natural",
+            "description": "",
+            "crowd": "weekends: crowded",
+            "best_season": "summer, autumn",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " E", " SE"],
+            "swell": ["NW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.029932625, 42.694054228]
+          },
+          "properties": {
+            "id": 16,
+            "name": "Castro de Baroña",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "15 minutes walking",
+            "location": "natural, archeological site",
+            "description": "needs a bigger swell to work;  ",
+            "crowd": "",
+            "best_season": "autumn, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE", " E"],
+            "swell": ["NW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.97421837, 42.740543595]
+          },
+          "properties": {
+            "id": 17,
+            "name": "Aguiera",
+            "alternative_name": "",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "left",
+            "access": "parking",
+            "location": "rural",
+            "description": "",
+            "crowd": "crowded",
+            "best_season": "autumn, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SW"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.738818436, 43.29315054]
+          },
+          "properties": {
+            "id": 18,
+            "name": "Praia das Torradas",
+            "alternative_name": "Aviño",
+            "province": "Costa da Morte",
+            "type": "Beach Break",
+            "tide": "media, alta",
+            "bottom": "sand, rocks",
+            "direction": "right, left",
+            "access": "5 minutes walking",
+            "location": "natural",
+            "description": "powerful; tubes with offshore winds; needs a bit of swell",
+            "crowd": "empty",
+            "best_season": "atumn, winter, spring",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SW", " SE"],
+            "swell": ["NW", " N"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.706666173, 43.290432215]
+          },
+          "properties": {
+            "id": 19,
+            "name": "Razo",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "village",
+            "description": "waves for begginners, intermediates and advanced",
+            "crowd": "few, weekends: sometimes crowded",
+            "best_season": "all year",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["SE", " S", " SW"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.827245147, 43.327494001]
+          },
+          "properties": {
+            "id": 20,
+            "name": "Seaia",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand, rocks",
+            "direction": "right, left",
+            "access": "parking, 10 minutes walk",
+            "location": "natural beach close to town",
+            "description": "works with big swells; strong currents could occur on bigger days",
+            "crowd": "",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SSW", " SW"],
+            "swell": ["N", " NNW", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.813758132, 43.323370844]
+          },
+          "properties": {
+            "id": 21,
+            "name": "Malpica",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, media",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "town",
+            "description": "works with bigger swells",
+            "crowd": "crowded",
+            "best_season": "autumn, winter, spring",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["SW", " SSW", " S", " SSE", " SE"],
+            "swell": ["N", " NNW", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.260474733, 43.007476817]
+          },
+          "properties": {
+            "id": 22,
+            "name": "Nemiña",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "rural ",
+            "description": "A right hander breaks at beginning of the beach and a fast and partly hollow left on the end of the beach",
+            "crowd": "crowded in summer and on weeksends",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE"],
+            "swell": ["NW", " NNW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.264467525, 42.96828239]
+          },
+          "properties": {
+            "id": 23,
+            "name": "O Rostro",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "mid, high",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "natural beach",
+            "description": "exposed beach, which works even with a small swell size. Offers fast and hollow waves with  high tide and offshore winds",
+            "crowd": "empty",
+            "best_season": "spring, summer, autumn",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE"],
+            "swell": ["NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.275069612, 42.908865683]
+          },
+          "properties": {
+            "id": 24,
+            "name": "Mar de Fora",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "",
+            "bottom": "sand",
+            "direction": "",
+            "access": "",
+            "location": "natural beach",
+            "description": "",
+            "crowd": "",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE", " NNE", " E"],
+            "swell": ["SW", " W", " WNW", " NW", " "]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.045225783, 43.191631688]
+          },
+          "properties": {
+            "id": 25,
+            "name": "Playa de Traba",
+            "alternative_name": "Traba",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "natural beach",
+            "description": "works with small swell size; does not hold up big swells",
+            "crowd": "empty, sometime crowded",
+            "best_season": "spring, summer, autumn",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["SE", " S", " SSW", " SW"],
+            "swell": ["N", " NNW", " NW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.021844286, 43.214067895]
+          },
+          "properties": {
+            "id": 26,
+            "name": "Soesto",
+            "alternative_name": "",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "natural beach",
+            "description": "works with small swell sizes; does not work with bigger swells; on occasions when offers fast and hollow waves",
+            "crowd": "crowded when its flat elsewhere",
+            "best_season": "spring, summer",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["S", " SSW", " SW", " SSE", " SE"],
+            "swell": ["N", " NW", " NNW", " W", " WNW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.117508601, 42.766517685]
+          },
+          "properties": {
+            "id": 28,
+            "name": "Lariño ",
+            "alternative_name": "Carnota",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "mid, high",
+            "bottom": "sand, rocks",
+            "direction": "left, right",
+            "access": "5 minutes walking",
+            "location": "rural",
+            "description": "righthander point close to the lighthouse, which is fast, hollow, powerful",
+            "crowd": "crowded when condtiones are perfect",
+            "best_season": "autumn, winter, spring",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE"],
+            "swell": ["W", " WNW", " NNW", " N"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.100441609, 42.754862959]
+          },
+          "properties": {
+            "id": 29,
+            "name": "Louro",
+            "alternative_name": "Muros, Ancoradoiro, Area Maior",
+            "province": "Costa do Morte",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "5 minutes walking",
+            "location": "natural beach",
+            "description": "works with smaller swell size; does not handle bigger swells ",
+            "crowd": "",
+            "best_season": "autumn, spring",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NE", " NNE", " E"],
+            "swell": ["W", " WSW", " SW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.873428243, 42.44193584]
+          },
+          "properties": {
+            "id": 1,
+            "name": "Lanzada",
+            "alternative_name": "A Lanzada",
+            "province": "Rias Baixas",
+            "type": "Beach Break",
+            "tide": "low, mid",
+            "bottom": "sand",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "semi urban, ",
+            "description": "",
+            "crowd": "",
+            "best_season": "spring, autumn, winter",
+            "best_conditions": {
+              "swell": "W"
+            },
+            "wind": ["N", " NW", " E", " NE"],
+            "swell": ["W", " NW"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.88657454, 42.457054399]
+          },
+          "properties": {
+            "id": 4,
+            "name": "Cantalapiedra (A Lanzada)",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "arena",
+            "tide": "mid, low",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "parking",
+            "location": "village",
+            "description": "with big swells currents appear to be strong, ridable waves",
+            "crowd": "",
+            "best_season": "",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["N", " NE", " E"],
+            "swell": ["SW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-8.769329344, 42.394563076]
+          },
+          "properties": {
+            "id": 7,
+            "name": "Area de Agra",
+            "alternative_name": "",
+            "province": "Rias Baixas",
+            "type": "Point Break",
+            "tide": "low, mid",
+            "bottom": "rocks",
+            "direction": "left, right",
+            "access": "parking",
+            "location": "rural",
+            "description": "difficult wave for experienced surfers;  right wave offers vertical takeoff, with tubes; left wave offers vertical takeoff, large and ridable, stone in the way to escivate",
+            "crowd": "",
+            "best_season": "autmn, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["W", " N", " NW", " NE", " E", " SE"],
+            "swell": ["SW", " W"]
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-9.05071674, 42.575024124]
+          },
+          "properties": {
+            "id": 12,
+            "name": "Corrubedo",
+            "alternative_name": "A Ladeira",
+            "province": "Barbanza",
+            "type": "Beach Break",
+            "tide": "high, mid",
+            "bottom": "sand",
+            "direction": "right, left",
+            "access": "park",
+            "location": "village, natural reserve",
+            "description": "needs a lot of swell; works also with strong northerlies",
+            "crowd": "week: few, weekends: crowded",
+            "best_season": "autumn, winter",
+            "best_conditions": {
+              "swell": ""
+            },
+            "wind": ["NW", " N", " NE"],
+            "swell": ["W", " NW"]
+          }
+        }
+      ]
+    },
+    "response_status": {
+      "status": 200,
+      "message": "ok"
+    }
+  }
+}

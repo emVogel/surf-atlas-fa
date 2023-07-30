@@ -1,11 +1,11 @@
 import "./App.scss";
 import Atlas from "./Pages/Atlas/Atlas";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, Outlet } from "react-router-dom";
 import SpotList from "./Pages/SpotList/SpotList";
 import SpotDetailView from "./Pages/SpotDetailView/SpotDetailView";
-import Home from "./Pages/Home/Home";
+import { loadAllSpots } from "./shared/map-data-loader";
 
-function App() {
+function Root() {
   return (
     <>
       <nav>
@@ -18,14 +18,8 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="atlas" element={<Atlas />}>
-          <Route path="/atlas" element={<SpotList />}></Route>
-          <Route path=":id" element={<SpotDetailView />}></Route>
-        </Route>
-      </Routes>
+      <Outlet />
     </>
   );
 }
-export default App;
+export default Root;

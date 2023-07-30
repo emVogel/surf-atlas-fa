@@ -2,8 +2,12 @@ import { LatLngTuple } from "leaflet";
 
 export interface Request {
   data: Geo;
-  message: string;
+  response_status: HttpResponseStatus;
+}
+
+export interface HttpResponseStatus {
   status: number;
+  message: string;
 }
 
 export interface Geometry {
