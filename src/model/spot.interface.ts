@@ -1,6 +1,6 @@
 import { LatLngTuple } from "leaflet";
 
-export interface Request {
+export interface IDataResponse {
   data: Geo;
   response_status: HttpResponseStatus;
 }

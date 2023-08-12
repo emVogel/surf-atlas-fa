@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Atlas from "./Pages/Atlas/Atlas";
@@ -9,12 +9,15 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
+  defer,
 } from "react-router-dom";
 
 import { loadAllSpots } from "./shared/map-data-loader";
 import LoaderError from "./shared/components/LoaderError/LoaderError";
 import Root from "./App";
 import Welcome from "./Pages/Welcome/Welcome";
+import Spinner from "./shared/components/spinner/Spinner";
+import { HttpResponseStatus, IDataResponse } from "./model/spot.interface";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,11 +26,13 @@ const router = createBrowserRouter(
         <Route path="/" element={<Welcome />}></Route>
         <Route
           path="atlas"
-          loader={loadAllSpots}
-          errorElement={<LoaderError />}
+          loader={async () => {
+            const data = loadAllSpots();
+            return defer({ spots: data });
+          }}
           element={<Atlas />}
         >
-          <Route path="atlas" element={<SpotList />}></Route>
+          <Route path="/atlas" element={<SpotList />}></Route>
           <Route path=":id" element={<SpotDetailView />}></Route>
         </Route>
       </Route>

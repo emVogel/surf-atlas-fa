@@ -1,9 +1,5 @@
 import "./App.scss";
-import Atlas from "./Pages/Atlas/Atlas";
-import { Routes, Route, Link, NavLink, Outlet } from "react-router-dom";
-import SpotList from "./Pages/SpotList/SpotList";
-import SpotDetailView from "./Pages/SpotDetailView/SpotDetailView";
-import { loadAllSpots } from "./shared/map-data-loader";
+import { NavLink, Outlet } from "react-router-dom";
 
 function Root() {
   return (
