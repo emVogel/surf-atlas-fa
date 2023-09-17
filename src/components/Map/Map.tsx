@@ -1,7 +1,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./Map.scss";
 
-import { Feature, Geo } from "../model/spot.interface";
+import { Feature, Geo } from "../../shared/model/spot.interface";
+import { useQuery } from "@tanstack/react-query";
+import { spotQuery } from "../../shared/route-loaders/map-data-loader";
 
 interface MapProps {
   features: Feature[];
@@ -18,8 +20,8 @@ function Map(props: MapProps) {
         <Marker
           key={feature?.properties.id}
           position={[
-            feature?.geometry.coordinates[1],
-            feature?.geometry.coordinates[0],
+            feature.geometry.coordinates[1],
+            feature.geometry.coordinates[0],
           ]}
         >
           <Popup>

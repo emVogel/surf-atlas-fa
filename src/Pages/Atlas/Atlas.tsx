@@ -1,24 +1,38 @@
-import { Outlet, useLoaderData, Await } from "react-router-dom";
-import Map from "../../components/Map";
-import { Feature } from "../../model/spot.interface";
+import { Outlet, useLoaderData, Await, defer } from "react-router-dom";
+import Map from "../../components/Map/Map";
+import { Feature, HttpResponseStatus } from "../../shared/model/spot.interface";
 import { useState } from "react";
 import Spinner from "../../shared/components/spinner/Spinner";
 import { Suspense } from "react";
 import LoaderError from "../../shared/components/LoaderError/LoaderError";
+import { useQuery } from "@tanstack/react-query";
+import { spotQuery } from "../../shared/route-loaders/map-data-loader";
+import Spots from "../../components/Spots/Spots";
+//const Map = lazy(() => import("../../components/Map/Map"));
+
 function Atlas() {
-  const spots = useLoaderData() as { spots: Feature[] };
+  // const initialData = useLoaderData() as Feature[];
+  // console.log(spots);
+  /* const {
+    data: spots,
+    error,
+    isLoading,
+  } = useQuery({
+    ...spotQuery(),
+  });*/
+  // console.log("init", spots, error);
 
   return (
-    <>
+    <section className="atlas-container">
       <div>Atlas</div>
-      <Suspense fallback={<Spinner size={10} />}>
-        <Await resolve={spots.spots} errorElement={<LoaderError />}>
-          {(spots) => <Map features={spots}></Map>}
-        </Await>
+      <div className="map-container">
+        <Suspense fallback={<p>load babay </p>}>
+          <Spots></Spots>
+        </Suspense>
+      </div>
 
-        <Outlet />
-      </Suspense>
-    </>
+      <Outlet />
+    </section>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useRouteError, useAsyncError } from "react-router-dom";
-import { HttpResponseStatus } from "../../../model/spot.interface";
+import { HttpResponseStatus } from "../../model/spot.interface";
 
 interface IRouterErrorResponse {
   status: number;
@@ -13,7 +13,7 @@ interface IRouterErrorResponse {
  * React element for depicting an error on using the map-data-lodaer
  */
 function LoaderError(): JSX.Element {
-  const error = useAsyncError() as IRouterErrorResponse;
+  const error = useRouteError() as IRouterErrorResponse;
   const message = error?.statusText ?? "Whatsoever error ocuured";
   const status = error?.status ?? 400;
   return (

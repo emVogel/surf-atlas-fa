@@ -1,7 +1,9 @@
+import { Skeleton } from "../../components/skeleton/Skeleton";
+
 function Welcome() {
   return (
     <>
-      <h1>Welcome to the show</h1>
+      <Skeleton />
     </>
   );
 }
