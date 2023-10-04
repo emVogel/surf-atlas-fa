@@ -1,25 +1,28 @@
 import "./Skeleton.scss";
 
 export const Skeleton = (): JSX.Element => {
+  const columns = [...Array.from({ length: 12 }, (_, i) => i + 1)];
+
   return (
     <>
       <div className="skeleton">
         <div className="skeleton__filter-panel">filter panel</div>
         <div className="skeleton__table-container">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-          <div>10</div>
-          <div>11</div>
+          {columns.map((colums, index) => (
+            <div
+              key={`skeleton-columns-${index}`}
+              className="skeleton__table_container-row"
+            >
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          ))}
         </div>
         <div className="skeleton__map-container">map</div>
-        <div className="skeleton__footer">footer</div>
       </div>
     </>
   );

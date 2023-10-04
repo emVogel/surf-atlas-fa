@@ -1,7 +1,22 @@
 main {
   width: 100%;
   height: 100vh;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
+  row-gap: 10px;
+  justify-content: stretch;
+}
+
+header {
+  background-color: #ffffff;
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  grid-row: 3/4;
 }
 
 nav {

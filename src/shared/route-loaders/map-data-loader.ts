@@ -4,15 +4,14 @@ import {
   HttpResponseStatus,
   IDataResponse,
 } from "../model/spot.interface";
-import { defer, json } from "react-router-dom";
 
 /**
  *
  * @returns a query config with request fn and query key to uniquely identify the query
  */
-export const spotQuery = () => ({
-  queryKey: ["spots"],
-  queryFn: getSpots,
+export const spotQuery = (filter: string) => ({
+  queryKey: ["spots", filter],
+  queryFn: () => getSpots(filter),
   suspense: true,
 });
 
@@ -22,7 +21,7 @@ export const spotQuery = () => ({
  * @returns Features[]
  */
 
-export function getSpots(): Promise<Feature[]> {
+export function getSpots(filter: string): Promise<Feature[]> {
   return fetch("/api/spots", {
     headers: {
       "Content-Type": "application/json",
@@ -71,7 +70,7 @@ export function getSpots(): Promise<Feature[]> {
 export const loadAllSpots = (queryClient: QueryClient) => async () => {
   console.log("loading spots");
   return (
-    queryClient.getQueryData(spotQuery().queryKey) ??
-    (await queryClient.fetchQuery({ ...spotQuery() }))
+    queryClient.getQueryData(spotQuery("").queryKey) ??
+    (await queryClient.fetchQuery({ ...spotQuery }))
   );
 };

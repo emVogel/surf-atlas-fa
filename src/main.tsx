@@ -1,8 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Atlas from "./Pages/Atlas/Atlas";
-import SpotList from "./Pages/SpotList/SpotList";
 import SpotDetailView from "./Pages/SpotDetailView/SpotDetailView";
 import {
   Route,
@@ -38,7 +37,6 @@ const router = createBrowserRouter(
           errorElement={<LoaderError />}
           element={<Atlas />}
         >
-          <Route path="/atlas" element={<SpotList />}></Route>
           <Route path=":id" element={<SpotDetailView />}></Route>
         </Route>
       </Route>

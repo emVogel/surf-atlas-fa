@@ -8,31 +8,18 @@ import LoaderError from "../../shared/components/LoaderError/LoaderError";
 import { useQuery } from "@tanstack/react-query";
 import { spotQuery } from "../../shared/route-loaders/map-data-loader";
 import Spots from "../../components/Spots/Spots";
-//const Map = lazy(() => import("../../components/Map/Map"));
+import { Skeleton } from "../../components/skeleton/Skeleton";
+import SpotsView from "../../components/Spots/Spots";
 
 function Atlas() {
-  // const initialData = useLoaderData() as Feature[];
-  // console.log(spots);
-  /* const {
-    data: spots,
-    error,
-    isLoading,
-  } = useQuery({
-    ...spotQuery(),
-  });*/
-  // console.log("init", spots, error);
-
   return (
-    <section className="atlas-container">
-      <div>Atlas</div>
-      <div className="map-container">
-        <Suspense fallback={<p>load babay </p>}>
-          <Spots></Spots>
-        </Suspense>
-      </div>
+    <Suspense fallback={<Skeleton />}>
+      <section className="atlas">
+        <SpotsView></SpotsView>
 
-      <Outlet />
-    </section>
+        <Outlet />
+      </section>
+    </Suspense>
   );
 }
 

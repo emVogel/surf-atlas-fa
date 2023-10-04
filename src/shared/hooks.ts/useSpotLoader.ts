@@ -1,11 +1,13 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Feature } from "../model/spot.interface";
-import { spotQuery } from "../route-loaders/map-data-loader";
+import { getSpots, spotQuery } from "../route-loaders/map-data-loader";
 
-export const useSpotLoader: () => Feature[] = () => {
+export const useSpotLoader: (filter: string) => Feature[] = (
+  filter: string
+) => {
   const { data: spots } = useQuery({
-    ...spotQuery(),
+    ...spotQuery(filter),
+    queryFn: () => getSpots(filter),
   });
 
   return spots || [];

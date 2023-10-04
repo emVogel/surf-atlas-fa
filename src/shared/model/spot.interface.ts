@@ -28,16 +28,23 @@ export interface Feature {
 
 export interface Spot {
   id: string;
+  name: string;
   province: string;
   alternative_name: string;
   type: string;
   tide: string;
-  wind: string;
-  swell: string;
+  wind: string[];
+  swell: string[];
   bottom: string;
   direction: string;
   access: string;
   crowd: string;
   location: string;
   best_Season: string;
+  description: string;
+  best_conditions: BestConditions;
 }
+
+type BestConditions = {
+  swell: string;
+};

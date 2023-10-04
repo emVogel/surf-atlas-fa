@@ -17,6 +17,7 @@ function Root() {
         </nav>
       </header>
       <Outlet />
+      <footer>footer</footer>
     </main>
   );
 }
