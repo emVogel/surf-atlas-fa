@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Feature, Spot } from "../../shared/model/spot.interface";
+import { Spot } from "../../shared/model/spot.interface";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -7,12 +7,19 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Box from "@mui/material/Box";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import { visuallyHidden } from "@mui/utils";
+import { useState, useMemo, MouseEvent } from "react";
 
+type ColumnType = "name" | "province" | "type" | "direction" | "swell" | "wind";
+type Order = "asc" | "desc";
 interface Column {
-  id: "name" | "province" | "type" | "direction" | "swell" | "wind";
+  id: ColumnType;
   label: string;
   minWidth: number;
   align?: "right" | "left";
+  isSortable?: boolean;
   concat?: (value: string[]) => string;
 }
 
@@ -22,18 +29,21 @@ const columns: Column[] = [
     label: "Name",
     minWidth: 100,
     align: "left",
+    isSortable: true,
   },
   {
     id: "province",
     label: "Province",
     minWidth: 100,
     align: "left",
+    isSortable: true,
   },
   {
     id: "type",
     label: "Type",
     minWidth: 100,
     align: "left",
+    isSortable: true,
   },
   {
     id: "direction",
@@ -61,26 +71,93 @@ interface SpotTableProps {
   spots: Spot[];
 }
 
+interface SpotTableHeaderProps {
+  orderBy: ColumnType;
+  order: Order;
+  onRequestSort: (property: ColumnType) => void;
+}
+
+/**
+ * The component for the spot table header
+ * @param props SpotTableHeaderProps
+ * @returns
+ */
+const SpotTableHeader = (props: SpotTableHeaderProps) => {
+  const handleRequestSort = (property: ColumnType) => {
+    props.onRequestSort(property);
+  };
+
+  const order = props.order;
+  const orderBy = props.orderBy;
+  return (
+    <TableHead>
+      <TableRow>
+        {columns.map((column) => (
+          <TableCell
+            key={column.id}
+            align={column.align}
+            style={{ minWidth: column.minWidth }}
+            sortDirection={orderBy === column.id ? order : false}
+          >
+            {column?.isSortable ? (
+              <TableSortLabel
+                active={orderBy === column.id}
+                direction={orderBy === column.id ? order : "asc"}
+                onClick={(_event: MouseEvent) => handleRequestSort(column.id)}
+              >
+                {column.label}
+                {orderBy === column.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === "desc"
+                      ? "sorted descending"
+                      : "sorted ascending"}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            ) : (
+              column.label
+            )}
+          </TableCell>
+        ))}
+      </TableRow>
+    </TableHead>
+  );
+};
+
+/**
+ * the table to display all spots with some of its properties
+ * @param props - spots
+ */
 const SpotTable = (props: SpotTableProps) => {
-  const spots = props.spots;
+  const [order, setOrder] = useState<Order>("asc");
+  const [orderBy, setOrderBy] = useState<ColumnType>("name");
+  const spots = useMemo(() => {
+    return props.spots.sort((a: Spot, b: Spot) => {
+      if (b[orderBy] < a[orderBy]) {
+        return order === "desc" ? -1 : 1;
+      }
+      if (b[orderBy] > a[orderBy]) {
+        return order === "desc" ? 1 : -1;
+      }
+      return 0;
+    });
+  }, [props.spots, order, orderBy]);
+
+  const handleRequestSort = (property: ColumnType) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
+  };
 
   return (
     <Paper variant="outlined" sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
+          <SpotTableHeader
+            order={order}
+            orderBy={orderBy}
+            onRequestSort={handleRequestSort}
+          />
           <TableBody>
             {spots.map((row) => {
               return (
