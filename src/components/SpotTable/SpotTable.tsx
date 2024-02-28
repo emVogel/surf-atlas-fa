@@ -11,8 +11,17 @@ import Box from "@mui/material/Box";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import { visuallyHidden } from "@mui/utils";
 import { useState, useMemo, MouseEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
-type ColumnType = "name" | "province" | "type" | "direction" | "swell" | "wind";
+type ColumnType =
+  | "name"
+  | "province"
+  | "type"
+  | "direction"
+  | "swell"
+  | "wind"
+  | "tide";
+
 type Order = "asc" | "desc";
 interface Column {
   id: ColumnType;
@@ -65,10 +74,13 @@ const columns: Column[] = [
     align: "left",
     concat: (value: string[]) => value.join(","),
   },
+  { id: "tide", label: "Tide", minWidth: 100, align: "left" },
 ];
 
 interface SpotTableProps {
   spots: Spot[];
+  onSelectedSpot: (spotId: string) => void;
+  selectedRow: string;
 }
 
 interface SpotTableHeaderProps {
@@ -149,6 +161,11 @@ const SpotTable = (props: SpotTableProps) => {
     setOrderBy(property);
   };
 
+  const handleRowClick = (rowId: string) => {
+    props.onSelectedSpot(rowId);
+    console.log(rowId);
+  };
+
   return (
     <Paper variant="outlined" sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -166,7 +183,11 @@ const SpotTable = (props: SpotTableProps) => {
                   role="checkbox"
                   tabIndex={-1}
                   key={row.id}
-                  sx={{ cursor: "pointer" }}
+                  sx={{
+                    cursor: "pointer",
+                    backgroundColor: props.selectedRow === row.id ? "red" : "",
+                  }}
+                  onClick={() => handleRowClick(row.id)}
                 >
                   {columns.map((column) => {
                     const value = row[column.id];

@@ -22,7 +22,8 @@ export const spotQuery = (filter: string) => ({
  */
 
 export function getSpots(filter: string): Promise<Feature[]> {
-  return fetch("/api/spots", {
+  const url = filter ? `/api/filterspots?${filter}` : "/api/spots";
+  return fetch(url, {
     headers: {
       "Content-Type": "application/json",
     },

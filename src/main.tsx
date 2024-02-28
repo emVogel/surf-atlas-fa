@@ -36,7 +36,8 @@ const router = createBrowserRouter(
           loader={() => defer({ data: loadAllSpots(queryClient) })}
           errorElement={<LoaderError />}
           element={<Atlas />}
-        >
+        ></Route>
+        <Route path="spot">
           <Route path=":id" element={<SpotDetailView />}></Route>
         </Route>
       </Route>
