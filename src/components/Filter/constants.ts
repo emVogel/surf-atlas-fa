@@ -4,10 +4,10 @@ import { FilterType, FilterValueDefinition } from "./types";
  * maps the filterName to its corresponding values
  */
 export const filterTypeMap: Record<FilterType, FilterValueDefinition> = {
-  direction: { values: ["right", "left"], label: "Select a direction" },
+  direction: { values: ["right", "left"], label: "Select a wave direction" },
   swell: {
     values: ["S", "SW", "W", "NW", "N"],
-    label: "Select a swell swell direction",
+    label: "Select a swell direction",
   },
   wind: {
     values: ["SE", "S", "SW", "W", "NW", "N", "NE", "E"],

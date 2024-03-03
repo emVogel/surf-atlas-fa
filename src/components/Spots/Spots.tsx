@@ -1,18 +1,15 @@
 import Map from "../../components/Map/Map";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useSpotLoader } from "../../shared/hooks.ts/useSpotLoader";
 import "./Spots.scss";
 import { FilterPanel } from "../Filter/Filter";
 import SpotTable from "../SpotTable/SpotTable";
 import { Spot } from "../../shared/model/spot.interface";
-import { SelectChangeEvent } from "@mui/material";
 
-export interface IMapCenter {
-  zoom: number;
-  center: number[];
-}
-
+/**
+ * the container for the map, filter and table
+ */
 function SpotsView() {
   const [urlFilter, setUrlFilter] = useState("");
   const [selectedSpot, setSelectedSpot] = useState("");
@@ -23,6 +20,10 @@ function SpotsView() {
   const handleFilterUrlChange = (filter: string) => {
     setUrlFilter(filter);
   };
+
+  useEffect(() => {
+    setSelectedSpot("");
+  }, [urlFilter]);
 
   return (
     <div className="spots">

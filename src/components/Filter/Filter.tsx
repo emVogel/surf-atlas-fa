@@ -30,7 +30,7 @@ export const FilterPanel = (props: FilterPanelProps) => {
     console.log("url generated with", filterKey, filterValue);
     const filter = `${filterKey}=${filterValue}`;
     props.onFilterValueChange(filter);
-  }, [filterKey, filterValue]);
+  }, [filterKey, filterValue, props.onFilterValueChange]);
 
   return (
     <>
@@ -48,7 +48,6 @@ export const FilterPanel = (props: FilterPanelProps) => {
               </option>
             ))}
           </select>
-
           <label
             className={filterKey ? "selected" : ""}
             htmlFor="filter-key-select"
