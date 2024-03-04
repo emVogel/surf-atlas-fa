@@ -2,6 +2,8 @@ import { FilterType, FilterValueDefinition } from "./types";
 import { filterTypeMap } from "./constants";
 import { FormEvent, useEffect, useState } from "react";
 
+import Button from "../../shared/components/button/Button";
+
 import "./Filter.scss";
 interface FilterPanelProps {
   onFilterValueChange: (filter: string) => void;
@@ -11,6 +13,8 @@ export const FilterPanel = (props: FilterPanelProps) => {
   const [filterKey, setFilterKey] = useState<FilterType>("" as FilterType);
 
   const [filterValue, setFilterValue] = useState<string>("");
+
+  const { onFilterValueChange } = props;
 
   const currentFilterValueDef: FilterValueDefinition | undefined =
     filterTypeMap[filterKey as FilterType];
@@ -25,12 +29,18 @@ export const FilterPanel = (props: FilterPanelProps) => {
     console.log("value", event.currentTarget.value);
   };
 
+  const resetFilter = (): void => {
+    setFilterKey("" as FilterType);
+    setFilterValue("");
+    onFilterValueChange("");
+  };
+
   useEffect(() => {
     if (!filterKey || !filterValue) return;
     console.log("url generated with", filterKey, filterValue);
     const filter = `${filterKey}=${filterValue}`;
-    props.onFilterValueChange(filter);
-  }, [filterKey, filterValue, props.onFilterValueChange]);
+    onFilterValueChange(filter);
+  }, [filterKey, filterValue, onFilterValueChange]);
 
   return (
     <>
@@ -80,6 +90,12 @@ export const FilterPanel = (props: FilterPanelProps) => {
               : "You need to select a filter before"}
           </label>
         </div>
+        <Button
+          disabled={!filterKey || !filterValue}
+          onButtonClick={resetFilter}
+        >
+          Reset Filter
+        </Button>
       </form>
     </>
   );

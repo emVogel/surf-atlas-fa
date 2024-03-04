@@ -1,6 +1,7 @@
 /**
  * the properties to filter the spots for
  */
+
 export type FilterType =
   | "direction"
   | "wind"

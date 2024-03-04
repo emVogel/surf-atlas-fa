@@ -1,23 +1,27 @@
+import { Children, ReactNode, MouseEventHandler } from "react";
 import "./Button.scss";
 
-type ButtonSize = "small" | "normal";
+type ButtonSize = "small" | "large" | "regular";
 
 interface ButtonProps {
-  label: string;
   disabled?: boolean;
+  onButtonClick: (...args: any[]) => void;
   isPrimary?: boolean;
   size?: ButtonSize;
+  children: React.ReactNode;
 }
 
 function Button(props: ButtonProps) {
+  const handleButtonClick = () => {
+    props.onButtonClick();
+  };
   return (
     <button
+      onClick={handleButtonClick}
       disabled={props.disabled}
-      className={`${props.isPrimary ? "primary" : ""} button ${
-        props.size ? "small" : ""
-      }`}
+      className={`${props.isPrimary ? "primary" : ""} button`}
     >
-      {props.label}
+      {props.children}
     </button>
   );
 }
