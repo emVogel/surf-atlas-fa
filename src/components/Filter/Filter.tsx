@@ -1,6 +1,6 @@
 import { FilterType, FilterValueDefinition } from "./types";
 import { filterTypeMap } from "./constants";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, memo, useEffect, useState } from "react";
 
 import Button from "../../shared/components/button/Button";
 
@@ -9,7 +9,7 @@ interface FilterPanelProps {
   onFilterValueChange: (filter: string) => void;
 }
 
-export const FilterPanel = (props: FilterPanelProps) => {
+const FilterPanel = (props: FilterPanelProps) => {
   const [filterKey, setFilterKey] = useState<FilterType>("" as FilterType);
 
   const [filterValue, setFilterValue] = useState<string>("");
@@ -73,7 +73,7 @@ export const FilterPanel = (props: FilterPanelProps) => {
           >
             <option value=""></option>
             {filterKey
-              ? filterTypeMap[filterKey].values.map((filterValue) => (
+              ? currentFilterValueDef.values.map((filterValue) => (
                   <option key={filterValue} value={filterValue}>
                     {filterValue}
                   </option>
@@ -100,3 +100,5 @@ export const FilterPanel = (props: FilterPanelProps) => {
     </>
   );
 };
+
+export default memo(FilterPanel);

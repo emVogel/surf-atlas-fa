@@ -1,9 +1,9 @@
 import Map from "../../components/Map/Map";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { useSpotLoader } from "../../shared/hooks.ts/useSpotLoader";
 import "./Spots.scss";
-import { FilterPanel } from "../Filter/Filter";
+import FilterPanel from "../Filter/Filter";
 import SpotTable from "../SpotTable/SpotTable";
 import { Spot } from "../../shared/model/spot.interface";
 
@@ -17,9 +17,9 @@ function SpotsView() {
 
   const tableSpots: Spot[] = spots.map((spot) => spot.properties);
 
-  const handleFilterUrlChange = (filter: string) => {
+  const handleFilterUrlChange = useCallback((filter: string) => {
     setUrlFilter(filter);
-  };
+  }, []);
 
   useEffect(() => {
     setSelectedSpot("");
