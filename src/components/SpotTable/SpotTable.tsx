@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import { Spot } from "../../shared/model/spot.interface";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
@@ -141,8 +141,10 @@ const SpotTableHeader = (props: SpotTableHeaderProps) => {
  * @param props - spots
  */
 const SpotTable = (props: SpotTableProps) => {
+  const isRowClicked = useRef(false);
   const [order, setOrder] = useState<Order>("asc");
   const [orderBy, setOrderBy] = useState<ColumnType>("name");
+  const { selectedRow } = props;
   const spots = useMemo(() => {
     return props.spots.sort((a: Spot, b: Spot) => {
       if (b[orderBy] < a[orderBy]) {
@@ -155,6 +157,22 @@ const SpotTable = (props: SpotTableProps) => {
     });
   }, [props.spots, order, orderBy]);
 
+  useEffect(() => {
+    if (isRowClicked.current) {
+      isRowClicked.current = false;
+      return;
+    }
+
+    if (!selectedRow) {
+      return;
+    }
+
+    const element = document.getElementById(selectedRow);
+    if (element) {
+      element.scrollIntoView({ block: "center" });
+    }
+  }, [selectedRow]);
+
   const handleRequestSort = (property: ColumnType) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -163,7 +181,7 @@ const SpotTable = (props: SpotTableProps) => {
 
   const handleRowClick = (rowId: string) => {
     props.onSelectedSpot(rowId);
-    console.log(rowId);
+    isRowClicked.current = true;
   };
 
   return (
@@ -183,9 +201,10 @@ const SpotTable = (props: SpotTableProps) => {
                   role="checkbox"
                   tabIndex={-1}
                   key={row.id}
+                  id={row.id}
+                  selected={props.selectedRow === row.id}
                   sx={{
                     cursor: "pointer",
-                    backgroundColor: props.selectedRow === row.id ? "red" : "",
                   }}
                   onClick={() => handleRowClick(row.id)}
                 >

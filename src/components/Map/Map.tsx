@@ -15,15 +15,21 @@ import L from "leaflet";
 interface MapProps {
   features: Feature[];
   selectedSpot: string;
+  selectSpotHandler: (id: string) => void;
 }
 
+/**
+ * props for the Mapview
+ */
 interface IMapViewProps {
   /** the LatLong from the selected spot */
   selectedView: LatLngTuple | undefined;
 }
+/** props for the CustomMarker */
 interface IMarkerProps {
   feature: Feature;
   isSelected: boolean;
+  selectMarkerHandler: (id: string) => void;
 }
 
 /**
@@ -57,6 +63,7 @@ const MapView = (props: IMapViewProps) => {
 const CustomMarker = (props: IMarkerProps) => {
   const marker = useRef<L.CircleMarker<any> | null>(null);
 
+  // effect to open the popup if the spot is selected
   useEffect(() => {
     const currMarker = marker.current;
 
@@ -83,9 +90,14 @@ const CustomMarker = (props: IMarkerProps) => {
         fillOpacity: 1,
         fillColor: props.isSelected ? "red" : "#00000",
       }}
+      eventHandlers={{
+        click: (e) => props.selectMarkerHandler(props.feature.properties.id),
+      }}
     >
       <Popup>
-        <a href="/">{props.feature.properties.name}</a>
+        <a href={`/atlas/spot/${props.feature.properties.id}`}>
+          {props.feature.properties.name}
+        </a>
       </Popup>
     </CircleMarker>
   );
@@ -126,6 +138,7 @@ function Map(props: MapProps) {
       />
       {props.features.map((feature: Feature) => (
         <CustomMarker
+          selectMarkerHandler={props.selectSpotHandler}
           key={feature?.properties.id}
           feature={feature}
           isSelected={props.selectedSpot === feature.properties.id}

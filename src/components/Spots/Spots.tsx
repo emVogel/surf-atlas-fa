@@ -38,7 +38,11 @@ function SpotsView() {
         />
       </div>
       <div className="map__container">
-        <Map features={spots} selectedSpot={selectedSpot}></Map>
+        <Map
+          features={spots}
+          selectedSpot={selectedSpot}
+          selectSpotHandler={(id: string) => setSelectedSpot(id)}
+        ></Map>
       </div>
     </div>
   );
