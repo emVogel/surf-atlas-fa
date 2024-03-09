@@ -20,6 +20,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import LoaderError from "./shared/components/LoaderError/LoaderError";
 import "./index.css";
+import SpotsView from "./components/Spots/Spots";
 
 const queryClient = new QueryClient();
 /**
@@ -31,14 +32,17 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<Root />}>
         <Route path="/" element={<Welcome />}></Route>
-        <Route
-          path="atlas"
-          loader={() => defer({ data: loadAllSpots(queryClient) })}
-          errorElement={<LoaderError />}
-          element={<Atlas />}
-        ></Route>
-        <Route path="spot">
-          <Route path=":id" element={<SpotDetailView />}></Route>
+        <Route path="atlas" element={<Atlas />}>
+          <Route
+            path="/atlas"
+            element={<SpotsView />}
+            loader={() => defer({ data: loadAllSpots(queryClient) })}
+            errorElement={<LoaderError />}
+          ></Route>
+
+          <Route path="/atlas/spot">
+            <Route path=":id" element={<SpotDetailView />}></Route>
+          </Route>
         </Route>
       </Route>
     </>

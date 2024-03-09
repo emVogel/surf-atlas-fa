@@ -157,6 +157,7 @@ const SpotTable = (props: SpotTableProps) => {
     });
   }, [props.spots, order, orderBy]);
 
+  // scroll to the selected spot, but not if the click is detected in the tables row
   useEffect(() => {
     if (isRowClicked.current) {
       isRowClicked.current = false;

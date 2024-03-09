@@ -15,8 +15,6 @@ function Atlas() {
   return (
     <Suspense fallback={<Skeleton />}>
       <section className="atlas">
-        <SpotsView></SpotsView>
-
         <Outlet />
       </section>
     </Suspense>
