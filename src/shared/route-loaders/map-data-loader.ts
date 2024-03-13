@@ -1,9 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
-import {
-  Feature,
-  HttpResponseStatus,
-  IDataResponse,
-} from "../model/spot.interface";
+import { Feature } from "../model/spot.interface";
+
+import { getRequestByUrl } from "./http-fetch";
 
 /**
  *
@@ -23,45 +21,7 @@ export const spotQuery = (filter: string) => ({
 
 export function getSpots(filter: string): Promise<Feature[]> {
   const url = filter ? `/api/filterspots?${filter}` : "/api/spots";
-  return fetch(url, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response: Response) => {
-      return new Promise((resolve) => {
-        return setTimeout(() => {
-          return resolve(response);
-        }, 4000);
-      }) as Promise<Response>;
-    })
-    .then((response: Response) => {
-      console.log("fetching init");
-      if (!response.ok || typeof response === "undefined") {
-        return Promise.reject<HttpResponseStatus>({
-          status: response.status || 400,
-          message: response.statusText || "Something went wrong",
-        });
-      }
-      return response.json();
-    })
-    .then((data: IDataResponse) => {
-      const response: IDataResponse = data as IDataResponse;
-      if (response.response_status.status > 399) {
-        return Promise.reject({
-          status: response.response_status.status,
-          message: response.response_status.message,
-        });
-      }
-      return response.data.features;
-    })
-    .catch((error: HttpResponseStatus) => {
-      console.error(error.status, error.message);
-      throw new Response("loading error", {
-        status: error.status === 200 ? 400 : error.status,
-        statusText: error.message,
-      });
-    });
+  return getRequestByUrl(url);
 }
 
 /**

@@ -7,7 +7,7 @@ import {
 } from "react-leaflet";
 import "./Map.scss";
 
-import { Feature } from "../../shared/model/spot.interface";
+import { Feature } from "../../../../shared/model/spot.interface";
 import { useMemo, useLayoutEffect, useState, useEffect, useRef } from "react";
 import { LatLngTuple } from "leaflet";
 import L from "leaflet";
@@ -49,7 +49,7 @@ const MapView = (props: IMapViewProps) => {
 
       return;
     }
-    map.setView(adjustedLatLongTuple, 10);
+    map.setView(adjustedLatLongTuple, 12);
   }, [props.selectedView, map]);
 
   return null;

@@ -47,4 +47,5 @@ export interface Spot {
 
 type BestConditions = {
   swell: string;
+  wind: string;
 };

@@ -2,7 +2,7 @@ import { FilterType, FilterValueDefinition } from "./types";
 import { filterTypeMap } from "./constants";
 import { FormEvent, memo, useEffect, useState } from "react";
 
-import Button from "../../shared/components/button/Button";
+import Button from "../../../../shared/components/button/Button";
 
 import "./Filter.scss";
 interface FilterPanelProps {

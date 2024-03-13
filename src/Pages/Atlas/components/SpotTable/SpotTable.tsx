@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-import { Spot } from "../../shared/model/spot.interface";
+import { Spot } from "../../../../shared/model/spot.interface";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -11,7 +11,6 @@ import Box from "@mui/material/Box";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import { visuallyHidden } from "@mui/utils";
 import { useState, useMemo, MouseEvent } from "react";
-import { useNavigate } from "react-router-dom";
 
 type ColumnType =
   | "name"

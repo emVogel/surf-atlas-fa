@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import { Suspense } from "react";
 
-import { Skeleton } from "../../components/skeleton/Skeleton";
+import { Skeleton } from "./components/skeleton/Skeleton";
 
 function Atlas() {
   return (

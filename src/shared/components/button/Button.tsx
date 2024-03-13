@@ -1,4 +1,3 @@
-import { Children, ReactNode, MouseEventHandler } from "react";
 import "./Button.scss";
 
 type ButtonSize = "small" | "large" | "regular";

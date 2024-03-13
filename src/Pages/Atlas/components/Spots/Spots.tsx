@@ -1,11 +1,11 @@
-import Map from "../../components/Map/Map";
+import Map from "../Map/Map";
 import { useCallback, useEffect, useState } from "react";
 
-import { useSpotLoader } from "../../shared/hooks.ts/useSpotLoader";
+import { useSpotLoader } from "../../../../shared/hooks.ts/useSpotLoader";
 import "./Spots.scss";
 import FilterPanel from "../Filter/Filter";
 import SpotTable from "../SpotTable/SpotTable";
-import { Spot } from "../../shared/model/spot.interface";
+import { Spot } from "../../../../shared/model/spot.interface";
 
 /**
  * the container for the map, filter and table

@@ -20,12 +20,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import LoaderError from "./shared/components/LoaderError/LoaderError";
 import "./index.css";
-import SpotsView from "./components/Spots/Spots";
+import SpotsView from "./Pages/Atlas/components/Spots/Spots";
+import { loadSpotById } from "./shared/route-loaders/spot-id.loader";
 
 const queryClient = new QueryClient();
 /**
  * the router config
  * using defer for the allspots-loader to not block the page from loading if data fetch is slow
+ * defer takes a Promise and resolves it
  */
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,7 +43,12 @@ const router = createBrowserRouter(
           ></Route>
 
           <Route path="/atlas/spot">
-            <Route path=":id" element={<SpotDetailView />}></Route>
+            <Route
+              path=":id"
+              element={<SpotDetailView />}
+              loader={() => defer({ data: loadSpotById(queryClient) })}
+              errorElement={<LoaderError />}
+            ></Route>
           </Route>
         </Route>
       </Route>

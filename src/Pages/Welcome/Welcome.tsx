@@ -1,4 +1,4 @@
-import { Skeleton } from "../../components/skeleton/Skeleton";
+import { Skeleton } from "../Atlas/components/skeleton/Skeleton";
 
 function Welcome() {
   return (
