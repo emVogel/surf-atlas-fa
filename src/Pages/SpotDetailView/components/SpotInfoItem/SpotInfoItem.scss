@@ -6,11 +6,16 @@ ul {
 
 li {
   display: flex;
+  column-gap: 10px;
 }
 
 .list-item--value {
+  word-wrap: break-word;
+  white-space: "text-wrap";
+  word-break: break-all;
 }
 
 .list-item--key {
-  flex-basis: 200px;
+  min-width: 200px;
+  font-weight: 800;
 }

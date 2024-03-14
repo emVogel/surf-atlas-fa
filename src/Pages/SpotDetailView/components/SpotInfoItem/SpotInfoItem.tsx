@@ -26,15 +26,16 @@ function SpotInfoItem(props: ISpotInfoItem) {
     }
 
     if (typeof infoValue === "object" && !Array.isArray(infoValue)) {
-      console.log(infoKey);
       return (
         <ul>
           {Object.entries(infoValue).map(([key, value]) => {
-            return (
+            return value ? (
               <li key={`${key}-${value}`}>
                 <span className="list-item--key"> {key}:</span>
                 <span className="list-item--value">{value}</span>
               </li>
+            ) : (
+              <li key={"empty-object"}>-</li>
             );
           })}
         </ul>

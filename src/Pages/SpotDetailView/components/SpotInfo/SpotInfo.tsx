@@ -9,8 +9,13 @@ function SpotInfo(props: ISpotsInfoProps) {
   const { properties } = props.spot;
   return (
     <>
-      <h2>{properties.name}</h2>
-      {properties?.alternative_name ?? <h3>{properties?.alternative_name}</h3>}
+      <div className="spot-info-headline">
+        <h2>{properties.name}</h2>
+        {properties?.alternative_name && (
+          <h4>{`(${properties?.alternative_name})`}</h4>
+        )}
+      </div>
+
       <ul className="info-list">
         {Object.entries(properties).map(([key, value], index) => (
           <SpotInfoItem
