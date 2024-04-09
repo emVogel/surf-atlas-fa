@@ -186,7 +186,7 @@ const SpotTable = (props: SpotTableProps) => {
 
   return (
     <Paper variant="outlined" sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+      <TableContainer sx={{ maxHeight: 500 }}>
         <Table stickyHeader aria-label="sticky table">
           <SpotTableHeader
             order={order}

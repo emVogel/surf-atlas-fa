@@ -45,7 +45,7 @@ const MapView = (props: IMapViewProps) => {
     const adjustedLatLongTuple: LatLngTuple | undefined =
       props.selectedView && [props.selectedView[1], props.selectedView[0]];
     if (!adjustedLatLongTuple) {
-      map.setView([42.705, -7.5], 8);
+      map.setView([42.705, -7.5], 7);
 
       return;
     }
@@ -63,18 +63,20 @@ const MapView = (props: IMapViewProps) => {
 const CustomMarker = (props: IMarkerProps) => {
   const marker = useRef<L.CircleMarker<any> | null>(null);
 
+  const { isSelected } = props;
+
   // effect to open the popup if the spot is selected
   useEffect(() => {
     const currMarker = marker.current;
 
-    if (props.isSelected) {
+    if (isSelected) {
       currMarker?.openPopup();
     }
 
     return () => {
       currMarker?.closePopup();
     };
-  }, [props.isSelected]);
+  }, [isSelected]);
 
   return (
     <CircleMarker

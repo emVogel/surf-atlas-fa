@@ -1,3 +1,27 @@
+@media screen and (min-device-width: 320px) and (max-width: 667px) {
+  form {
+    margin: 10px 0;
+    flex-direction: column;
+  }
+
+  .custom-select {
+    display: block;
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  select {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1085px) and (-webkit-min-device-pixel-ratio: 2) {
+  form {
+    margin-bottom: 10px;
+  }
+}
+
 .custom-select {
   display: block;
   position: relative;
@@ -29,12 +53,14 @@ select {
   outline: none;
   min-width: 300px;
 }
+
 label,
 select {
   letter-spacing: 0.00938em;
   height: 30px;
   font-size: 1rem;
 }
+
 form {
   display: flex;
 }
@@ -52,6 +78,7 @@ select::after {
   transform: scaleX(0);
   transition: transform 250ms ease-in-out;
 }
+
 select:focus::after {
   transform: scaleX(1);
 }

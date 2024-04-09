@@ -34,3 +34,10 @@
     }
   }
 }
+
+/* Landscape */
+@media only screen and (min-device-width: 810px) and (max-device-width: 1085px) and (orientation: landscape) {
+  .button {
+    padding: 3px 20px;
+  }
+}

@@ -14,11 +14,7 @@ function SpotInfoItem(props: ISpotInfoItem) {
 
   const getInfoValueAsString = () => {
     if (typeof infoValue === "string") {
-      return (
-        <span className="list-item--value">
-          {props.spotInfoValue as string}
-        </span>
-      );
+      return <span className="list-item--value">{infoValue as string}</span>;
     }
 
     if (Array.isArray(infoValue)) {

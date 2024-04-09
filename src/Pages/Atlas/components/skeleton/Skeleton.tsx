@@ -13,12 +13,12 @@ export const Skeleton = (): JSX.Element => {
               key={`skeleton-columns-${index}`}
               className="skeleton__table_container-row"
             >
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+              <div className="skeleton__table_container-cell"></div>
+              <div className="skeleton__table_container-cell"></div>
+              <div className="skeleton__table_container-cell"></div>
+              <div className="skeleton__table_container-cell"></div>
+              <div className="skeleton__table_container-cell"></div>
+              <div className="skeleton__table_container-cell"></div>
             </div>
           ))}
         </div>
