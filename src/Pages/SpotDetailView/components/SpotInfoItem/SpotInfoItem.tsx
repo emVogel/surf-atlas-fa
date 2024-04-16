@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Spot } from "../../../../shared/model/spot.interface";
 import "./SpotInfoItem.scss";
 
@@ -7,6 +8,29 @@ interface ISpotInfoItem {
   spotInfoKey: SpotInfoKey;
   spotInfoValue: string | string[] | Record<string, string>;
 }
+
+const renderInfoFromObject = (
+  info: Record<string, unknown>
+): ReactNode[] | ReactNode => {
+  return Object.entries(info).map(([key, value]) => {
+    if (typeof value === "object") {
+      console.log("value of type object", value);
+      return renderInfoFromObject(value as Record<string, unknown>);
+    }
+
+    console.log("info", key, ":", value);
+    return (
+      <span key={`${key}-${value}`}>
+        <span className="list-item--key"> {key}:</span>
+        {value ? (
+          <span className="list-item--value">{value as string}</span>
+        ) : (
+          <span className="list-item--value">-</span>
+        )}
+      </span>
+    );
+  });
+};
 
 function SpotInfoItem(props: ISpotInfoItem) {
   const infoKey = props.spotInfoKey;
@@ -22,20 +46,7 @@ function SpotInfoItem(props: ISpotInfoItem) {
     }
 
     if (typeof infoValue === "object" && !Array.isArray(infoValue)) {
-      return (
-        <ul>
-          {Object.entries(infoValue).map(([key, value]) => {
-            return value ? (
-              <li key={`${key}-${value}`}>
-                <span className="list-item--key"> {key}:</span>
-                <span className="list-item--value">{value}</span>
-              </li>
-            ) : (
-              <li key={"empty-object"}>-</li>
-            );
-          })}
-        </ul>
-      );
+      return renderInfoFromObject(infoValue);
     }
   };
 
@@ -119,7 +130,7 @@ function SpotInfoItem(props: ISpotInfoItem) {
     case "best_conditions":
       return (
         <li>
-          <span className="list-item--key"> Best Comditions: </span>
+          <span className="list-item--key"> Best Conditions: </span>
           {getInfoValueAsString()}
         </li>
       );

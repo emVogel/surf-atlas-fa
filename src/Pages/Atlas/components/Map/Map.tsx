@@ -61,6 +61,7 @@ const MapView = (props: IMapViewProps) => {
  * @returns
  */
 const CustomMarker = (props: IMarkerProps) => {
+  console.log(props.feature.geometry);
   const marker = useRef<L.CircleMarker<any> | null>(null);
 
   const { isSelected } = props;
@@ -111,6 +112,7 @@ const CustomMarker = (props: IMarkerProps) => {
  * @returns
  */
 function Map(props: MapProps) {
+  console.log(props.features);
   const [unmountMap, setunmountMap] = useState(false);
   //to prevent map re-initialization
   useLayoutEffect(() => {
