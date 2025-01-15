@@ -112,7 +112,6 @@ const CustomMarker = (props: IMarkerProps) => {
  * @returns
  */
 function Map(props: MapProps) {
-  console.log(props.features);
   const [unmountMap, setunmountMap] = useState(false);
   //to prevent map re-initialization
   useLayoutEffect(() => {

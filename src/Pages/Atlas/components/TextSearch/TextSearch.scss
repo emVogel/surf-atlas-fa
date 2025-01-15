@@ -1,34 +1,38 @@
 @media screen and (min-device-width: 320px) and (max-width: 667px) {
-  form {
+  .search-by-name-form {
     margin: 10px 0;
     flex-direction: column;
   }
 
-  .custom-select {
+  .search-by-name {
     display: block;
     position: relative;
     margin: 10px 0;
     width: 100%;
   }
 
-  select {
+  input {
     width: 100%;
   }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1085px) and (-webkit-min-device-pixel-ratio: 2) {
-  form {
+  .search-by-name-form {
     margin-bottom: 10px;
   }
 }
 
-.custom-select {
+.name-filter {
+  position: relative;
+}
+
+.search-by-name {
   display: block;
   position: relative;
   margin-right: 10px;
 }
 
-.generic-filter-label {
+.search-for-name-label {
   color: rgba(0, 0, 0, 0.6);
   font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
   display: flex;
@@ -46,7 +50,7 @@
   }
 }
 
-select {
+input {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
@@ -54,24 +58,25 @@ select {
   min-width: 300px;
 }
 
-.generic-filter-label,
-select {
+label,
+input {
   letter-spacing: 0.00938em;
   height: 30px;
   font-size: 1rem;
 }
 
-form {
+.search-by-name-form {
   display: flex;
+  margin-top: 24px;
 }
 
-select:focus + .generic-filter-label {
+input:focus + label {
   color: #1976d2;
   top: -5px;
   font-size: 0.75rem;
 }
 
-select::after {
+input::after {
   display: block;
   content: "";
   border-bottom: 3px solid #1976d2;
@@ -79,6 +84,24 @@ select::after {
   transition: transform 250ms ease-in-out;
 }
 
-select:focus::after {
+input:focus::after {
   transform: scaleX(1);
+}
+
+.search-hits-container {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.75rem;
+  border: 1px solid #bfbfbf;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 3px 3px 5px #aaaaaa;
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  background-color: white;
+  padding: 10px;
+
+  .search-hits {
+  }
 }

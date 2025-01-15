@@ -19,7 +19,6 @@ export function getRequestByUrl(url: string): Promise<Feature[]> {
       }) as Promise<Response>;
     })
     .then((response: Response) => {
-      console.log("fetching init");
       if (!response.ok || typeof response === "undefined") {
         return Promise.reject<HttpResponseStatus>({
           status: response.status || 400,
@@ -36,10 +35,9 @@ export function getRequestByUrl(url: string): Promise<Feature[]> {
           message: response.response_status.message,
         });
       }
-      return response.data.features;
+      return response.data.features || [];
     })
     .catch((error: HttpResponseStatus) => {
-      console.error(error.status, error.message);
       throw new Response("loading error", {
         status: error.status === 200 ? 400 : error.status,
         statusText: error.message,

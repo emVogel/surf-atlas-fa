@@ -38,10 +38,12 @@ const FilterPanel = (props: FilterPanelProps) => {
   useEffect(() => {
     if (!filterKey || !filterValue) return;
     console.log("url generated with", filterKey, filterValue);
-    const filter = `${filterKey}=${filterValue}`;
-    onFilterValueChange(filter);
+    // genereates the urlFilter
+    const urlFilter = `${filterKey}=${filterValue}`;
+    onFilterValueChange(urlFilter);
   }, [filterKey, filterValue, onFilterValueChange]);
 
+  // value property for select is explicitly required in react
   return (
     <>
       <form>
@@ -59,7 +61,7 @@ const FilterPanel = (props: FilterPanelProps) => {
             ))}
           </select>
           <label
-            className={filterKey ? "selected" : ""}
+            className={`generic-filter-label ${filterKey ? "selected" : ""}`}
             htmlFor="filter-key-select"
           >
             Select a filter
@@ -82,7 +84,7 @@ const FilterPanel = (props: FilterPanelProps) => {
           </select>
 
           <label
-            className={filterValue ? "selected" : ""}
+            className={`generic-filter-label ${filterValue ? "selected" : ""}`}
             htmlFor="filter-value-select"
           >
             {filterKey

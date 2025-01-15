@@ -6,6 +6,7 @@ import "./Spots.scss";
 import FilterPanel from "../Filter/Filter";
 import SpotTable from "../SpotTable/SpotTable";
 import { Spot } from "../../../../shared/model/spot.interface";
+import SearchNames from "../TextSearch/TextSearch";
 
 /**
  * the container for the map, filter and table
@@ -29,7 +30,9 @@ function SpotsView() {
     <div className="spots">
       <div className="filter__panel">
         <FilterPanel onFilterValueChange={handleFilterUrlChange} />
+        <SearchNames />
       </div>
+
       <div className="table__container">
         <SpotTable
           spots={tableSpots}
